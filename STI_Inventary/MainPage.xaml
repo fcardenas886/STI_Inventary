@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="STI_Inventary.MainPage">
+    <ContentPage.Content>
+
+        <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Toma de Inventario" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+            <Label x:Name="_lblversion" Text="Version: " FontSize="15" Padding="30,0,30,0"/>
+
+            <Entry x:Name="Ent_pat" Placeholder="Patente"> </Entry>
+        <StackLayout Orientation="Horizontal">
+                <Entry x:Name="Ent_barra" Placeholder="codigo" HorizontalOptions="FillAndExpand" Keyboard="Numeric"> </Entry>
+            <Button x:Name="Btn_buscar" Text="Buscar"  Clicked="Btn_buscar_Clicked"></Button>
+            
+        </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label x:Name="Lbl_nombre" Text="nombre" TextColor="Red" HorizontalOptions="StartAndExpand"/>
+                <Label x:Name="Lbl_codigo" Text="barra" TextColor="Red" HorizontalOptions="End" WidthRequest="70"/>
+            </StackLayout>
+
+
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+
+            <Label Text="Inv. Actual" Grid.Column="0" Grid.Row="0"/>
+            <Entry x:Name="Ent_actual" Placeholder="-1" Grid.Column="1" Grid.Row="0" IsReadOnly="True"> </Entry>
+            
+            <Label Text="Stock" Grid.Column="0" Grid.Row="1"/>
+                <Entry x:Name="Ent_stock"  Placeholder="0" Grid.Column="1" Grid.Row="1" Keyboard="Numeric" BackgroundColor="AliceBlue"></Entry>
+
+            <Label Text="Nuevo Stock" Grid.Column="0" Grid.Row="2"/>
+            <Entry x:Name="Ent_ns"  Placeholder="0" Grid.Column="1" Grid.Row="2"></Entry>
+            <Button Text="Guardar" x:Name="Btn_guardar" Clicked="Btn_guardar_Clicked"
+                    Grid.Column="2" Grid.Row="2" />
+
+        </Grid>
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
